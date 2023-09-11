@@ -1,11 +1,12 @@
 <?php
+// DRAFT, using insert.php for this function!!!
     $mid = $_POST['mid'];
     $mname = $_POST['mname'];
     $myear = $_POST['myear'];
     $mrating = $_POST['mrating'];
 
     //Database connection: make new, test if good, if so then insert data
-$conn = new msqli('localhost', 'root', 'root', 'movie');
+$conn = new mysqli('localhost', 'root', 'root', 'movie');
 if($conn->connect_error){
     die('Connection to Database Failed : '.$conn->connect_error);
 }else{
