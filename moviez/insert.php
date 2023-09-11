@@ -6,7 +6,14 @@
     $mgenreid = $_POST['mgenreid'];
 
     //Database connection: make new, test if good, if so then insert data
-include 'connect.php';
+    //include 'connect.php';
+    $servername = "localhost";
+    $user = "root";
+    $password = "";
+    $dbname = "movies";
+    
+    $conn = new mysqli($servername, $user, $password, $dbname);
+
 
 if($conn->connect_error){
     die('Connection to Database Failed : '.$conn->connect_error);
