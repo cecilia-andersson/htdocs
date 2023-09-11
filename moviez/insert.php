@@ -5,15 +5,23 @@
     $mrating = $_POST['mrating'];
 
     //Database connection: make new, test if good, if so then insert data
-$conn = new mysqli('localhost', 'root', 'root', 'movie');
+include 'connect.php';
+
 if($conn->connect_error){
     die('Connection to Database Failed : '.$conn->connect_error);
 }else{
-    $stmt = $conn->prepare("insert into registration(mid, mname, myear, mrating) values(?, ?, ?, ?)");
+    //$sql = "INSERT INTO animals (name, domain, propulsion) VALUES (?, ?, ?)";
+
+    $stmt = $conn->prepare("INSERT INTO movies (mid, mname, myear, mrating) values(?, ?, ?, ?)");
     $stmt->bind_param("isii", $mid, $mname, $myear, $mrating); //integer vs strings expected
-    $stmt->execute();
-    echo "Movie added to database!"; //Tell user that it worked
+    $result = $stmt->execute();
+
+    if ($result) {
+        echo "Movie added to database!"; //Tell user that it worked
+        } else {
+        echo "Error: " . $stmt->error;
+        }
     $stmt->close();
-    $conn->close(); //Closing the connection to the database server
+    include 'closeDB.php'; //Closing the connection to the database server
 }
 ?>

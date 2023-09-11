@@ -8,7 +8,7 @@
     <h1>Form to Submit a Movie</h1>
     
     <!---Sending information collected in form to the database file--->
-    <form action="db.php" method="post">
+    <form action="insert.php" method="post">
         <label for="mid">Movie ID:</label>
         <input type="text" id="mid" name="mid" required><br><br>
 
@@ -18,7 +18,7 @@
         <label for="myear">Release Year:</label>
         <input type="text" id="myear" name="myear" required><br><br>
 
-        <label for="mrating">Genre:</label>
+        <label for="mrating">Rating:</label>
         <input type="text" id="mrating" name="mrating" required><br><br>
 
         <label for="mgenreid">Choose a genre:</label>
