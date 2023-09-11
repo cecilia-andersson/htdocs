@@ -20,7 +20,7 @@ if($conn->connect_error){
 }else{
     //$sql = "INSERT INTO animals (name, domain, propulsion) VALUES (?, ?, ?)";
 
-    $stmt = $conn->prepare("INSERT INTO movies (mid, mname, myear, mrating, mgenreid) values(?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO movies (mid, mname, myear, mrating, mgenreid) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("isiis", $mid, $mname, $myear, $mrating, $mgenreid); //integer vs strings expected
     $result = $stmt->execute();
 
