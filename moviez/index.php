@@ -24,10 +24,10 @@
         <label for="mgenreid">Choose a genre:</label>
             <select name="mgenreid" id="mgenreid">
                 <!---Figure out how to use php to populate this area with the entries in the genre database--->
-                <option value="ACTION GENREID">Action/Adventure</option>
-                <option value="COMEDY ID">Comedy</option>
-                <option value="DRAMA ID">Drama</option>
-                <option value="FANTASY ID">Fantasy/SciFi</option>
+                <option value="1">Action/Adventure</option>
+                <option value="2">Comedy</option>
+                <option value="3">Drama</option>
+                <option value="4">Fantasy/SciFi</option>
             </select>
 
         <input type="submit" value="Submit">
